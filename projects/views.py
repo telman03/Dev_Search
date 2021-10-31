@@ -26,5 +26,4 @@ def projects(request):
 
 def project(request, pk):
     projectObj = Project.objects.get(id=pk)
-    print('projectObj:', projectObj)
     return render(request, 'projects/single-projects.html', {'project': projectObj})
