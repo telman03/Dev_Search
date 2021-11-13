@@ -2,6 +2,11 @@ from django.shortcuts import render
 from .models import Profile
 
 # Create your views here.
+def loginPage(request):
+    if request.method == 'POST':
+        print(request.POST)
+    return render(request, 'users/login_register.html')
+
 
 def profiles(request):
     profiles = Profile.objects.all()
