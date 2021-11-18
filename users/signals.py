@@ -8,7 +8,6 @@ from .models import Profile
 
 #@receiver(post_save, sender=Profile)
 def createProfile(sender, instance, created, **kwargs):
-    print('Profile signal triggered')
     if created:
         user = instance
         profile = Profile.objects.create(
@@ -20,7 +19,6 @@ def createProfile(sender, instance, created, **kwargs):
 def deleteUser(sender, instance, **kwargs):
     user = instance.user
     user.delete()
-    print('Deleting user...')
 
 post_save.connect(createProfile, sender=User)
 post_delete.connect(deleteUser, sender=Profile)
