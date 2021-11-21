@@ -25,3 +25,4 @@
 * Django
 * Postgres
 * Django REST Framework
+ 
